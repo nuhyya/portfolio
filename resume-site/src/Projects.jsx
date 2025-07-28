@@ -1,66 +1,65 @@
 // src/Projects.jsx
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+
+const projectData = [
+  {
+    src: "./assets/vctrl.png",
+    alt: "vctrl",
+    link: "https://github.com/nuhyya/git-from-scratch"
+  },
+  {
+    src: "./assets/yadtq.png",
+    alt: "yadtq",
+    link: "https://github.com/nuhyya/yadtq"
+  },
+  {
+    src: "./assets/dscm.png",
+    alt: "dscm",
+    link: "https://github.com/udaykiran1101/628_634_636_669_Distributed_Systems_Cluster"
+  },
+  {
+    src: "./assets/multimodal.png",
+    alt: "multimodal",
+    link: "https://github.com/nuhyya/Multimodal-Emotion-Recognition-using-Deep-Learning"
+  },
+  {
+    src: "./assets/nl2sql.png",
+    alt: "nl2sql",
+    link: "https://github.com/nuhyya/nl2sql"
+  },
+  {
+    src: "./assets/fashion.png",
+    alt: "fashion",
+    link: "https://github.com/nuhyya/Fashion-Advice-and-Recommendation-System"
+  }
+];
 
 const Projects = () => {
-  const navigate = useNavigate();
-
   return (
-    <div className="w-full overflow-x-hidden relative">
-      <img src="/assets/5.png" alt="projects top" className="w-full" />
-      <img src="/assets/6.png" alt="projects middle" className="w-full" />
+    <div className="relative w-full overflow-x-hidden">
+      {/* Static background */}
+      <img src="./assets/5.png" alt="projects top" className="w-full" />
 
-      <div className="absolute top-[40%] left-[15%] flex flex-wrap gap-6">
-        {/* Replace with your actual project buttons and links */}
-        <img
-          src="/assets/vctrl.png"
-          alt="Project 1"
-          className="w-28 cursor-pointer"
-          onClick={() => window.open('https://github.com/nuhyya/git-from-scratch', '_blank')}
-        />
-        <img
-          src="/assets/yadtq.png"
-          alt="Project 2"
-          className="w-28 cursor-pointer"
-          onClick={() => window.open('https://github.com/nuhyya/yadtq', '_blank')}
-        />
-         <img
-          src="/assets/dscm.png"
-          alt="Project 3"
-          className="w-28 cursor-pointer"
-          onClick={() => window.open('https://github.com/udaykiran1101/628_634_636_669_Distributed_Systems_Cluster', '_blank')}
-        />
-         <img
-          src="/assets/multimodal.png"
-          alt="Project 4"
-          className="w-28 cursor-pointer"
-          onClick={() => window.open('https://github.com/nuhyya/Multimodal-Emotion-Recognition-using-Deep-Learning', '_blank')}
-        />
-         <img
-          src="/assets/nl2sql.png"
-          alt="Project 5"
-          className="w-28 cursor-pointer"
-          onClick={() => window.open('https://github.com/nuhyya/nl2sql', '_blank')}
-        />
-         <img
-          src="/assets/fashion.png"
-          alt="Project 6"
-          className="w-28 cursor-pointer"
-          onClick={() => window.open('https://github.com/nuhyya/Fashion-Advice-and-Recommendation-System', '_blank')}
-        />
-    
+      {/* Scrollable Project Buttons */}
+      <div className="absolute top-[180px] md:top-[200px] left-0 w-full px-4 md:px-8">
+        <div className="overflow-x-auto">
+          <div className="flex w-max gap-8 md:gap-10">
+            {projectData.map((project, idx) => (
+              <img
+                key={idx}
+                src={project.src}
+                alt={project.alt}
+                className="w-[75vw] h-[75vw] max-w-[520px] max-h-[520px] flex-shrink-0 cursor-pointer"
+                onClick={() => window.open(project.link, "_blank")}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
-      <div className="relative">
-        <img src="/assets/7.png" alt="projects bottom" className="w-full" />
-
-        <img
-          src="/assets/back.png"
-          alt="back"
-          className="absolute top-[10%] left-[5%] w-20 cursor-pointer"
-          onClick={() => navigate('/')}
-        />
-      </div>
+      {/* Extra space using background.png twice */}
+      <img src="./assets/background.png" alt="padding 1" className="w-full" />
+      <img src="./assets/background.png" alt="padding 2" className="w-full" />
     </div>
   );
 };

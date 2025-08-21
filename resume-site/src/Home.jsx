@@ -28,7 +28,7 @@ const Home = () => {
           className="w-full h-full object-contain cursor-pointer"
           onClick={() =>
             window.open(
-              'https://docs.google.com/document/d/1Dgkyq_79rjT1RS0J8fKet2O1I3kDjVzKvgbOIwcxDIE/edit?usp=sharing',
+              'https://drive.google.com/file/d/1R4dXnLs7IUzagPE7nKaoX5CoJU1f6RNw/view?usp=sharing',
               '_blank'
             )
           }
